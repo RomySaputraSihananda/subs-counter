@@ -1,8 +1,8 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Bank-Service",
-    "description": "Rest API to check the username with the account number",
+    "title": "Sub-Counter-Service",
+    "description": "Rest API to show detail counter of subscribers and views from channel youtube",
     "version": "v1.0.0",
     "license": {
       "name": "Licensed Under MIT",
@@ -12,12 +12,24 @@
   "produces": ["application/json"],
   "consumes": ["application/json"],
   "paths": {
-    "/api/v1/bank": {
+    "/api/v1/search/{name}": {
       "get": {
-        "x-swagger-router-controller": "bank",
-        "operationId": "getBank",
-        "tags": ["Bank-Controller"],
-        "description": "API for get bankcode and bankname",
+        "x-swagger-router-controller": "check",
+        "operationId": "index",
+        "tags": ["Channel-Controller"],
+        "description": "API to search channel youtube",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "name",
+            "description": "username of youtube channel",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "windah basudara"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "200 response",
@@ -28,8 +40,13 @@
                 "message": "string",
                 "data": [
                   {
-                    "kodeBank": "string",
-                    "namaBank": "string"
+                    "id": "string",
+                    "title": "string",
+                    "avatar": "string",
+                    "banner": "string",
+                    "isBanner": "bool",
+                    "subscriberCount": "string",
+                    "hiddenSubscriberCount": "bool"
                   }
                 ]
               }
@@ -38,52 +55,21 @@
         }
       }
     },
-    "/api/v1/ewallet": {
+    "/api/v1/channel/{id}": {
       "get": {
-        "x-swagger-router-controller": "ewallet",
-        "operationId": "getWallet",
-        "tags": ["Bank-Controller"],
-        "description": "API for get walletcode and walletname",
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "examples": {
-              "application/json": {
-                "status": "string",
-                "code": 200,
-                "message": "string",
-                "data": [
-                  {
-                    "kodeBank": "string",
-                    "namaBank": "string"
-                  }
-                ]
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/v1/check": {
-      "post": {
         "x-swagger-router-controller": "check",
         "operationId": "index",
         "tags": ["Bank-Controller"],
-        "description": "API to check the username of bank",
-        "produces": ["application/json"],
-        "consumes": ["application/json"],
+        "description": "API to get detail subscriber and views of channel youtube",
         "parameters": [
           {
-            "in": "body",
-            "name": "body",
-            "description": "Object of accountname and accountnumber",
+            "in": "path",
+            "name": "id",
+            "description": "id of youtube channel",
             "required": true,
             "schema": {
-              "type": "object",
-              "example": {
-                "bankCode": "002",
-                "accountNumber": "616**********33"
-              }
+              "type": "string",
+              "example": "UCoIiiHof6BJ85PLuLkuxuhw"
             }
           }
         ],
@@ -96,10 +82,8 @@
                 "code": 200,
                 "message": "string",
                 "data": {
-                  "bankcode": "string",
-                  "bankname": "string",
-                  "accountnumber": "string",
-                  "accountname": "string"
+                  "views": 0,
+                  "videos": 0
                 }
               }
             }

@@ -57,7 +57,10 @@ class SubscriberService {
 
     return res
       .json(
-        new BodyResponse("OK", 200, `all data of channel with id ${id}`, table)
+        new BodyResponse("OK", 200, `all data of channel with id ${id}`, {
+          views: table[0]["count"],
+          videos: table[1]["count"],
+        })
       )
       .status(200);
   };
