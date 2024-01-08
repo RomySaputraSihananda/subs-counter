@@ -59,7 +59,7 @@
       "get": {
         "x-swagger-router-controller": "check",
         "operationId": "index",
-        "tags": ["Bank-Controller"],
+        "tags": ["Channel-Controller"],
         "description": "API to get detail subscriber and views of channel youtube",
         "parameters": [
           {
