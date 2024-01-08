@@ -23,6 +23,6 @@ class MyExpressServer {
 
 export default MyExpressServer;
 
-const portNumber: number = 3000;
-const myServer: MyExpressServer = new MyExpressServer(portNumber);
+const PORT: number = 4444;
+const myServer: MyExpressServer = new MyExpressServer(PORT);
 myServer.startServer();
