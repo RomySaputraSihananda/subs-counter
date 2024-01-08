@@ -15,7 +15,7 @@
     "/api/v1/search/{name}": {
       "get": {
         "x-swagger-router-controller": "check",
-        "operationId": "index",
+        "operationId": "search",
         "tags": ["Channel-Controller"],
         "description": "API to search channel youtube",
         "parameters": [
@@ -58,7 +58,7 @@
     "/api/v1/channel/{id}": {
       "get": {
         "x-swagger-router-controller": "check",
-        "operationId": "index",
+        "operationId": "detail",
         "tags": ["Channel-Controller"],
         "description": "API to get detail subscriber and views of channel youtube",
         "parameters": [
