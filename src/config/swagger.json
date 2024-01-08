@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Sub-Counter-Service",
+    "title": "Subs-Counter-Service",
     "description": "Rest API to show detail counter of subscribers and views from channel youtube",
     "version": "v1.0.0",
     "license": {

@@ -1,5 +1,5 @@
 {
-  "name": "sub-counter",
+  "name": "subs-counter",
   "version": "1.0.0",
   "description": "simple rest api to show detail counter of subscribers and views from channel youtube",
   "main": "index.js",
