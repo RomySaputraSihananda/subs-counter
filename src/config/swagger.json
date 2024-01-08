@@ -1,0 +1,111 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Bank-Service",
+    "description": "Rest API to check the username with the account number",
+    "version": "v1.0.0",
+    "license": {
+      "name": "Licensed Under MIT",
+      "url": "https://spdx.org/licenses/MIT.html"
+    }
+  },
+  "produces": ["application/json"],
+  "consumes": ["application/json"],
+  "paths": {
+    "/api/v1/bank": {
+      "get": {
+        "x-swagger-router-controller": "bank",
+        "operationId": "getBank",
+        "tags": ["Bank-Controller"],
+        "description": "API for get bankcode and bankname",
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "examples": {
+              "application/json": {
+                "status": "string",
+                "code": 200,
+                "message": "string",
+                "data": [
+                  {
+                    "kodeBank": "string",
+                    "namaBank": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ewallet": {
+      "get": {
+        "x-swagger-router-controller": "ewallet",
+        "operationId": "getWallet",
+        "tags": ["Bank-Controller"],
+        "description": "API for get walletcode and walletname",
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "examples": {
+              "application/json": {
+                "status": "string",
+                "code": 200,
+                "message": "string",
+                "data": [
+                  {
+                    "kodeBank": "string",
+                    "namaBank": "string"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/check": {
+      "post": {
+        "x-swagger-router-controller": "check",
+        "operationId": "index",
+        "tags": ["Bank-Controller"],
+        "description": "API to check the username of bank",
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Object of accountname and accountnumber",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "example": {
+                "bankCode": "002",
+                "accountNumber": "616**********33"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "examples": {
+              "application/json": {
+                "status": "string",
+                "code": 200,
+                "message": "string",
+                "data": {
+                  "bankcode": "string",
+                  "bankname": "string",
+                  "accountnumber": "string",
+                  "accountname": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
