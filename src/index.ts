@@ -1,16 +1,15 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express } from "express";
 import { SubscriberController } from "./controllers";
 
 class MyExpressServer {
   private app: Express = express();
   private port: number;
-  private controller: SubscriberController = new SubscriberController(this.app);
 
   constructor(port: number) {
     this.port = port;
-
     this.configureRoutes();
-    this.controller.setupRouter();
+
+    new SubscriberController(this.app);
   }
 
   private configureRoutes(): void {}
@@ -21,6 +20,8 @@ class MyExpressServer {
     });
   }
 }
+
+export default MyExpressServer;
 
 const portNumber: number = 3000;
 const myServer: MyExpressServer = new MyExpressServer(portNumber);

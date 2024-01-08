@@ -1,7 +1,7 @@
 {
   "name": "sub-counter",
   "version": "1.0.0",
-  "description": "",
+  "description": "simple rest api to show detail counter of subscribers and views from channel youtube",
   "main": "index.js",
   "scripts": {
     "start": "npx ts-node src/index.ts",

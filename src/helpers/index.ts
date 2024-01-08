@@ -1,3 +1,5 @@
 import BodyResponse from "./BodyResponse";
 
-export { BodyResponse };
+const ENDPOINTS: string = "/api/v1";
+
+export { BodyResponse, ENDPOINTS };
