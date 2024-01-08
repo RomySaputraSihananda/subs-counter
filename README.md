@@ -44,10 +44,10 @@ The following is a list of available Request URIs:
 
 - **Bank Controller**
 
-  - | URL                                                          | Method | Information                          |
-    | :----------------------------------------------------------- | :----: | :----------------------------------- |
-    | [/api/v1/bank](http://localhost:4444/api/v1/search/{name})   |  GET   | API for get channel id and detail    |
-    | [/api/v1/ewallet](http://localhost:4444/api/v1/channel/{id}) |  GET   | API for get views and videos counter |
+  - | URL                                                                       | Method | Information                          |
+    | :------------------------------------------------------------------------ | :----: | :----------------------------------- |
+    | [/api/v1/search/{name}](http://localhost:4444/api/v1/search/{name})       |  GET   | API for get channel id and detail    |
+    | [/api/v1/ewallet/channel/{id}](http://localhost:4444/api/v1/channel/{id}) |  GET   | API for get views and videos counter |
 
 ## License
 
